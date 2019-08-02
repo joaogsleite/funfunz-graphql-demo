@@ -6,3 +6,6 @@ import 'setup/mysql'
 
 // setup http server
 import 'setup/httpServer'
+
+// setup funfunzmc
+import 'setup/mc'

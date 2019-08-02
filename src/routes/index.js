@@ -4,6 +4,7 @@ import { Router } from 'express'
 import apiRouter from 'routes/api'
 import authRouter from 'routes/auth'
 import wwwRoute from 'routes/www'
+import funfunzmc from '../setup/mc'
 
 // logger
 import logger from 'utils/logger'
@@ -14,6 +15,7 @@ const router = Router()
 
 router.use('/api', apiRouter)
 router.use('/connect', authRouter)
+router.use('/admin/api', funfunzmc)
 router.use(wwwRoute)
 
 export default router

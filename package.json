@@ -37,6 +37,7 @@
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "express-validator": "^5.3.1",
+    "funfunzmc": "0.0.24",
     "http-errors": "^1.7.2",
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
