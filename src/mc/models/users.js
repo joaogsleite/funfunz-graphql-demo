@@ -8,6 +8,14 @@ export default {
     "delete": true,
     "edit": true
   },
+  "relations": {
+    "manyToOne": {
+      "posts": [{
+        "fk": "id",
+        "target": "id",
+      }],
+    },
+  },
   "columns": [
     {
       "name": "id",
