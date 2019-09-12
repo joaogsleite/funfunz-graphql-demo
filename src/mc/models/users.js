@@ -103,7 +103,12 @@ export default {
     }
   ],
   "visible": true,
-  "roles": [
-    "all"
-  ]
+  "roles": {
+    "read": [
+      'all',
+    ],
+    "write": [
+      'all',
+    ],
+  },
 }

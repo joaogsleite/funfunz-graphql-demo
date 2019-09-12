@@ -22,17 +22,18 @@ const runTask = (taskName, options = defaultOptions) => {
   return sh(`npm run task -- ${taskName}`, options)
 }
 
-const dockerSh = (name, command, { interactive } = {}, options = defaultOptions) => {
-  return sh(`docker exec ${interactive ? '-it' : ''} ${name} ${command}`, options)
+const dockerSh = (name, command, { interactive, tty } = {}, options = defaultOptions) => {
+  return sh(`docker exec ${interactive ? (tty !== false ? '-it' : '-i') : ''} ${name} ${command}`, options)
 }
 
-const dockerStart = ({image, name, interactive, background, ports={}, envs={}}, command='', options = defaultOptions) => {
+const dockerStart = ({image, name, interactive, tty, background, volumes={}, ports={}, envs={}}, command='', options = defaultOptions) => {
   return sh(`
     docker run \
     ${interactive ? '-it' : ''} \
     ${name ? `--name ${name}` : ''} \
     ${background ? '-d' : ''} \
     ${Object.keys(ports).map(port => `-p ${port}:${ports[port]}`).join(' ')} \
+    ${Object.keys(volumes).map(vol => `-v ${vol}:${volumes[vol]}`).join(' ')} \
     ${Object.keys(envs).map(env => `-e ${env}=${envs[env]}`).join(' ')} \
     ${image} ${command}
   `, options)

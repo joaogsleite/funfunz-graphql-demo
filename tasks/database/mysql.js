@@ -72,6 +72,17 @@ function shell() {
   } 
 }
 
+function exec(options, name) {
+  const shellOptions = { nopipe: true }
+  const scriptPath = `./tasks/database/scripts/${name}.sql`
+  if (DOCKER) {
+    const dockerOptions = { interactive: true, tty: false }
+    dockerSh(dockerContainerName, `sh -c "exec mysql -u ${DB_USER} -p${DB_PASS} ${DB_NAME}" < ${scriptPath}`, dockerOptions, shellOptions)
+  } else {
+    sh(`mysql -h ${DB_HOST} -P ${DB_PORT} -u ${DB_USER} -p${DB_PASS} ${DB_NAME} < ${scriptPath}`, shellOptions)
+  } 
+}
+
 module.exports = {
   start,
   stop,
@@ -79,4 +90,5 @@ module.exports = {
   restore,
   shell,
   deploy,
+  exec,
 }
