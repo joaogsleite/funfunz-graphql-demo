@@ -26,7 +26,10 @@ export default {
         "main": true,
         "detail": true
       },
-      "editable": true
+      "editable": true,
+      "input": {
+        "type": "number",
+      },
     },
     {
       "name": "name",
@@ -37,7 +40,10 @@ export default {
         "main": true,
         "detail": true
       },
-      "editable": true
+      "editable": true,
+      "input": {
+        "type": "text",
+      },
     },
     {
       "name": "email",
@@ -48,7 +54,10 @@ export default {
         "main": true,
         "detail": true
       },
-      "editable": true
+      "editable": true,
+      "input": {
+        "type": "email",
+      },
     },
     {
       "name": "password",
@@ -59,7 +68,10 @@ export default {
         "main": true,
         "detail": true
       },
-      "editable": true
+      "editable": true,
+      "input": {
+        "type": "password",
+      },
     },
     {
       "name": "createdAt",
@@ -70,7 +82,10 @@ export default {
         "main": true,
         "detail": true
       },
-      "editable": true
+      "editable": true,
+      "input": {
+        "type": "date",
+      },
     },
     {
       "name": "updatedAt",
@@ -81,7 +96,10 @@ export default {
         "main": true,
         "detail": true
       },
-      "editable": true
+      "editable": true,
+      "input": {
+        "type": "date",
+      },
     }
   ],
   "visible": true,

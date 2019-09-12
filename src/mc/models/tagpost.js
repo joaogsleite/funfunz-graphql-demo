@@ -19,7 +19,10 @@ export default {
         "main": true,
         "detail": true
       },
-      "editable": true
+      "editable": true,
+      "input": {
+        "type": "date",
+      },
     },
     {
       "name": "updatedAt",
@@ -30,7 +33,10 @@ export default {
         "main": true,
         "detail": true
       },
-      "editable": true
+      "editable": true,
+      "input": {
+        "type": "date",
+      },
     },
     {
       "name": "postId",
@@ -47,7 +53,10 @@ export default {
         "table": "posts",
         "key": "id",
         "display": "id"
-      }
+      },
+      "input": {
+        "type": "relation",
+      },
     },
     {
       "name": "tagId",
@@ -64,7 +73,10 @@ export default {
         "table": "tags",
         "key": "id",
         "display": "id"
-      }
+      },
+      "input": {
+        "type": "relation",
+      },
     }
   ],
   "visible": true,

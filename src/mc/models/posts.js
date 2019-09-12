@@ -18,7 +18,10 @@ export default {
         "main": true,
         "detail": true
       },
-      "editable": true
+      "editable": true,
+      "input": {
+        "type": "number",
+      },
     },
     {
       "name": "title",
@@ -29,7 +32,10 @@ export default {
         "main": true,
         "detail": true
       },
-      "editable": true
+      "editable": true,
+      "input": {
+        "type": "text",
+      },
     },
     {
       "name": "createdAt",
@@ -40,7 +46,10 @@ export default {
         "main": true,
         "detail": true
       },
-      "editable": true
+      "editable": true,
+      "input": {
+        "type": "date",
+      },
     },
     {
       "name": "updatedAt",
@@ -51,7 +60,10 @@ export default {
         "main": true,
         "detail": true
       },
-      "editable": true
+      "editable": true,
+      "input": {
+        "type": "date",
+      },
     },
     {
       "name": "ownerId",
@@ -68,7 +80,10 @@ export default {
         "table": "users",
         "key": "id",
         "display": "id"
-      }
+      },
+      "input": {
+        "type": "relation",
+      },
     }
   ],
   "visible": true,
