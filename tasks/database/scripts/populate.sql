@@ -3,6 +3,8 @@
 DELETE FROM tagpost;
 DELETE FROM tags;
 DELETE FROM posts;
+DELETE FROM userrole;
+DELETE FROM roles;
 DELETE FROM users;
 
 
@@ -17,6 +19,22 @@ INSERT INTO users
 (id, name, email, password, createdAt, updatedAt)
 VALUES
 (2, 'Joao Moura', 'joao.moura@isobar.com', 'password', NOW(), NOW());
+
+
+
+/* insert roles */
+INSERT INTO roles
+(id, name, createdAt, updatedAt)
+VALUE
+(1, 'admin', NOW(), NOW());
+
+
+
+/* userrole relation */
+INSERT INTO userrole
+(userId, roleId, createdAt, updatedAt)
+VALUE
+(1, 1, NOW(), NOW());
 
 
 

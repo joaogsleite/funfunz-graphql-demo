@@ -1,6 +1,7 @@
 import Sequelize, { Model } from 'sequelize'
 
 import Post from './post'
+import Role from './role'
 
 export default class User extends Model {
   static init (sequelize) {
@@ -13,12 +14,18 @@ export default class User extends Model {
     super.init(schema, options)
   }
   static associate () {
-    const options = {
+    const options1 = {
       sourceKey: 'id',
       foreignKey: 'ownerId',
       as: 'posts',
     }
-    User.hasMany(Post, options)
+    User.hasMany(Post, options1)
+    const options2 = {
+      through: 'userrole',
+      foreignKey: 'userId',
+      otherKey: 'roleId',
+    }
+    User.belongsToMany(Role, options2)
   }
 
   static getById (id) {

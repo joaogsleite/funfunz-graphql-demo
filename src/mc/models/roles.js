@@ -1,6 +1,6 @@
 export default {
-  "name": "users",
-  "verbose": "Users",
+  "name": "roles",
+  "verbose": "Roles",
   "pk": [
     "id"
   ],
@@ -10,23 +10,19 @@ export default {
   },
   "relations": {
     "manyToOne": {
-      "posts": [{
-        "fk": "id",
-        "target": "id",
-      }],
       "userrole": [{
         "fk": "id",
-        "target": "userId",
+        "target": "roleId",
       }],
     },
     "manyToMany": [
       {
-        "verbose": "Roles",
+        "verbose": "Users",
         "relationTable": "userrole",
-        "foreignKey": "userId",
+        "foreignKey": "roleId",
         "localId": "id",
-        "remoteTable": "roles",
-        "remoteForeignKey": "roleId",
+        "remoteTable": "users",
+        "remoteForeignKey": "userId",
         "remoteId": "id"
       }
     ]
@@ -58,34 +54,6 @@ export default {
       "editable": true,
       "input": {
         "type": "text",
-      },
-    },
-    {
-      "name": "email",
-      "verbose": "email",
-      "type": "varchar(255)",
-      "allowNull": true,
-      "visible": {
-        "main": true,
-        "detail": true
-      },
-      "editable": true,
-      "input": {
-        "type": "email",
-      },
-    },
-    {
-      "name": "password",
-      "verbose": "password",
-      "type": "varchar(255)",
-      "allowNull": true,
-      "visible": {
-        "main": true,
-        "detail": true
-      },
-      "editable": true,
-      "input": {
-        "type": "password",
       },
     },
     {
