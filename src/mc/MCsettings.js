@@ -1,11 +1,11 @@
 import postsModel from './models/posts'
-import tagpostModel from './models/tagpost'
-import tagsModel from './models/tags'
 import usersModel from './models/users'
+import rolesModel from './models/roles'
+import userroleModel from './models/userrole'
 
 export default [
   postsModel,
-  tagpostModel,
-  tagsModel,
   usersModel,
+  rolesModel,
+  userroleModel,
 ]

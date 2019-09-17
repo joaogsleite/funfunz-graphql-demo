@@ -8,19 +8,6 @@ export default {
     "delete": true,
     "edit": true
   },
-  "relations": {
-    "manyToMany": [
-      {
-        "verbose": "Tags",
-        "relationTable": "tagpost",
-        "foreignKey": "postId",
-        "localId": "id",
-        "remoteTable": "tags",
-        "remoteForeignKey": "tagId",
-        "remoteId": "id"
-      }
-    ]
-  },
   "columns": [
     {
       "name": "id",

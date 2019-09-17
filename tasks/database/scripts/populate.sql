@@ -1,7 +1,5 @@
 
 /* clean database */
-DELETE FROM tagpost;
-DELETE FROM tags;
 DELETE FROM posts;
 DELETE FROM userrole;
 DELETE FROM roles;
@@ -70,6 +68,7 @@ INSERT INTO userrole
 (userId, roleId, createdAt, updatedAt)
 VALUE
 (2, 4, NOW(), NOW());
+
 
 
 /* insert posts */
