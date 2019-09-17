@@ -28,6 +28,21 @@ INSERT INTO roles
 VALUE
 (1, 'admin', NOW(), NOW());
 
+INSERT INTO roles
+(id, name, createdAt, updatedAt)
+VALUE
+(2, 'editor', NOW(), NOW());
+
+INSERT INTO roles
+(id, name, createdAt, updatedAt)
+VALUE
+(3, 'reviewer', NOW(), NOW());
+
+INSERT INTO roles
+(id, name, createdAt, updatedAt)
+VALUE
+(4, 'guest', NOW(), NOW());
+
 
 
 /* userrole relation */
@@ -36,6 +51,25 @@ INSERT INTO userrole
 VALUE
 (1, 1, NOW(), NOW());
 
+INSERT INTO userrole
+(userId, roleId, createdAt, updatedAt)
+VALUE
+(1, 2, NOW(), NOW());
+
+INSERT INTO userrole
+(userId, roleId, createdAt, updatedAt)
+VALUE
+(1, 3, NOW(), NOW());
+
+INSERT INTO userrole
+(userId, roleId, createdAt, updatedAt)
+VALUE
+(2, 3, NOW(), NOW());
+
+INSERT INTO userrole
+(userId, roleId, createdAt, updatedAt)
+VALUE
+(2, 4, NOW(), NOW());
 
 
 /* insert posts */
@@ -48,54 +82,3 @@ INSERT INTO posts
 (id, title, createdAt, updatedAt, ownerId)
 VALUES
 (2, 'Animals in extinction', NOW(), NOW(), 1);
-
-
-
-/* insert tags */
-INSERT INTO tags
-(id, name, createdAt, updatedAt)
-VALUES
-(1, 'trending', NOW(), NOW());
-
-INSERT INTO tags
-(id, name, createdAt, updatedAt)
-VALUES
-(2, 'technology', NOW(), NOW());
-
-INSERT INTO tags
-(id, name, createdAt, updatedAt)
-VALUES
-(3, 'mobile', NOW(), NOW());
-
-INSERT INTO tags
-(id, name, createdAt, updatedAt)
-VALUES
-(4, 'nature', NOW(), NOW());
-
-
-
-/* tagpost relation */
-INSERT INTO tagpost
-(tagId, postId, createdAt, updatedAt)
-VALUES
-(1, 1, NOW(), NOW());
-
-INSERT INTO tagpost
-(tagId, postId, createdAt, updatedAt)
-VALUES
-(1, 2, NOW(), NOW());
-
-INSERT INTO tagpost
-(tagId, postId, createdAt, updatedAt)
-VALUES
-(2, 1, NOW(), NOW());
-
-INSERT INTO tagpost
-(tagId, postId, createdAt, updatedAt)
-VALUES
-(3, 1, NOW(), NOW());
-
-INSERT INTO tagpost
-(tagId, postId, createdAt, updatedAt)
-VALUES
-(4, 2, NOW(), NOW());
