@@ -26,7 +26,7 @@ const dockerSh = (name, command, { interactive, tty } = {}, options = defaultOpt
   return sh(`docker exec ${interactive ? (tty !== false ? '-it' : '-i') : ''} ${name} ${command}`, options)
 }
 
-const dockerStart = ({image, name, interactive, tty, background, volumes={}, ports={}, envs={}}, command='', options = defaultOptions) => {
+const dockerStart = ({image, name, interactive, background, volumes={}, ports={}, envs={}}, command='', options = defaultOptions) => {
   return sh(`
     docker run \
     ${interactive ? '-it' : ''} \

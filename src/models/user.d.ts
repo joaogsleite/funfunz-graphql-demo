@@ -6,6 +6,16 @@ import {
   HasManyHasAssociationMixin,
   HasManyCountAssociationsMixin,
   HasManyCreateAssociationMixin,
+  BelongsToManyGetAssociationsMixin,
+  BelongsToManySetAssociationsMixin,
+  BelongsToManyAddAssociationMixinn,
+  BelongsToManyAddAssociationsMixin,
+  BelongsToManyCreateAssociationMixin,
+  BelongsToManyRemoveAssociationMixin,
+  BelongsToManyRemoveAssociationsMixin,
+  BelongsToManyHasAssociationMixin,
+  BelongsToManyHasAssociationsMixin,
+  BelongsToManyCountAssociationsMixin,
 } from 'sequelize'
 
 import { Post } from './post'
@@ -43,8 +53,8 @@ declare class User extends Model {
   public readonly roles?: Role[]
 
   public static associations: {
-    posts: Association<User, Post>,
-    roles: Association<User, Role>,
+    posts: Association<User, Post>
+    roles: Association<User, Post>
   }
 }
 

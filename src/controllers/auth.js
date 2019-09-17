@@ -6,7 +6,6 @@ const include = [
   { model: Role, as: 'roles' },
 ]
 
-
 export async function microsoftCallback (accessToken, refreshToken, profile, done) {
   try {
     const where = { email: profile.emails[0].value }

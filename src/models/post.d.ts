@@ -3,10 +3,10 @@ import Sequelize, {
   BelongsToGetAssociationMixin,
   BelongsToSetAssociationMixin,
   BelongsToCreateAssociationMixin,
+  Instance
 } from 'sequelize'
 
 import { User } from './user'
-import { Tag } from './tag'
 
 declare class Post extends Model {
   public id!: number

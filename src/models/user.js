@@ -14,18 +14,17 @@ export default class User extends Model {
     super.init(schema, options)
   }
   static associate () {
-    const options1 = {
+    User.hasMany(Post, {
       sourceKey: 'id',
       foreignKey: 'ownerId',
       as: 'posts',
-    }
-    User.hasMany(Post, options1)
-    const options2 = {
+    })
+    User.belongsToMany(Role, {
       through: 'userrole',
       foreignKey: 'userId',
       otherKey: 'roleId',
-    }
-    User.belongsToMany(Role, options2)
+      as: 'roles',
+    })
   }
 
   static getById (id) {
@@ -34,10 +33,16 @@ export default class User extends Model {
   }
 
   toJSON() {
-    return {
+    const obj = {
       id: this.id,
       name: this.name,
       email: this.email,
     }
+    if (Array.isArray(this.roles)) {
+      obj.roles = this.roles.map((role) => {
+        return role.toJSON()
+      })
+    }
+    return obj
   }
 }
