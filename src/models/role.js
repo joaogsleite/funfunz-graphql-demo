@@ -28,7 +28,6 @@ export default class Role extends Model {
     return {
       id: this.id,
       name: this.name,
-      email: this.email,
     }
   }
 }
