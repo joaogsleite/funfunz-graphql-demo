@@ -89,10 +89,13 @@ export default {
   "visible": true,
   "roles": {
     "read": [
-      'all',
+      "all",
     ],
     "write": [
-      'all',
+      "all",
     ],
+    "delete": [
+      "all"
+    ]
   },
 }

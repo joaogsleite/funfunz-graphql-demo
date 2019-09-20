@@ -11,12 +11,12 @@ export default {
   "relations": {
     "manyToOne": {
       "posts": [{
-        "fk": "id",
+        "fk": "ownerId",
         "target": "id",
       }],
       "userrole": [{
-        "fk": "id",
-        "target": "userId",
+        "fk": "userId",
+        "target": "id",
       }],
     },
     "manyToMany": [

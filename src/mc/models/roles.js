@@ -11,8 +11,8 @@ export default {
   "relations": {
     "manyToOne": {
       "userrole": [{
-        "fk": "id",
-        "target": "roleId",
+        "fk": "roleId",
+        "target": "id",
       }],
     },
     "manyToMany": [
